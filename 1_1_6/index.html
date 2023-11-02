@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="hideScroll" onload="gameLoad()">
+    <div id="onLoad"> </div>
+    <br>
+    
+    <div class="intro">
+    <h1>Welcome to Equadle!!!</h1>
+    <h2>1.1.6 | Shreesh & Yashwant</h2>
+    </div>
+
+        <a class="popUp" onclick="informationDisplay()"><img name="Instructions" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEX///8AAAD39/fV1dVLS0v5+flubm5bW1vv7++lpaWTk5MbGxvj4+PS0tLn5+fZ2dmvr6+BgYG4uLhkZGQ7OztRUVHExMSMjIxzc3NGRkaXl5cVFRUwMDAlJSV6enq7u7vKysqHh4egoKAsLCxfX18LCwsYGBhOTk5ktAlSAAAFbUlEQVR4nO2dh3biMBBFMazB9F4DwZQs//+HawMh5LCQN9KoTM7cD7D0jO3polJRFEVRFEVRFOUXkPb6s8F+PqwfGxeO48Ww1RzMar1q6L3ZkuXN4fIjecWhPh/V0tAbNSHNV423l9ruWY/3XVEya60JLO6LSUuIylndQN0n41Hsr2Z3YSHvwnQb7y9Z3W+s9Z1Z9ENL+S+ddx55Zybb0HIe6IwZ9ZW0B6ElfaPHra/kYxRa1o1050BfyaEbWtqFrSN9JeMstLrCMzs5FFgQ/HUcuNVXMA3rAxydCyzIw+nrtH0ITJJWKIEjP/oKGmEEtrwJLHycEC+jTQhB582/2Wh4FVjgW+LUt8Dkw69E/wKLB9Vn3OjFDD4w8SfQPpA3Y+xL4CqQwCRp+hE4CyYwSbykN3oBBSZtHwqZsk2GDN0L5Mw3meD8Oc0DC3RvMkILTBLH+anQz2jBm1OBNYudLetlzTDPZ9vBvlX/oej2CqeZG5OSUsn7qPdwrWw2XxtdzKXFMAvqh7WnF8yaS4MLOsz44yXPG+ufPgx9eiT9x5nAJnkvbeR2d8jB9OMjzwT547AHL0z1dF3l3qjJ3wl+q6u0xPnGkUKiQ7ojXZxmaN24bkR/jep67CgXXzlRSEvNPLcQz6D8iksH+ioZSaDJY0S5hezyKsTUhdF7khIWyHnFnaEUYQydDoLRQO0QgT5BoLG5wk3/kVPbBUIZxvwz0IHXODBKu3LAFVpk3/GWDvb8NyHBZpPT7MKrdNikXcE9NjuPCnZ9Z0zCbuDfALuld+gy7IE+LHBttw5sMLjDC9xWWGbCqug63JlhPPa1XQlN3Sw4ZN0BZxqsby36wnObfDgpZt1qtwMXmnLI+gJ+O+x9/j24EHP8BBviuvVSqOFlVgjnSe2tVCCFO1ShvS+F3kzm9xCOvu2XQn9D5qaFfnc2GjT3q/l7/Tg9LdfPomGG2h5qebnt4SNpmnX63bKQ1FzNd8PF8TTZcNxYNA71UO12BBohOkhjeAKt38U3cQIC59simVOgAyfWYx9xe8ocFOilc8gJaA02UOO3PbAD7KY04wE4DpX6ocGrP6F3agrcmcvsd3sDT+oHH/cyBO+tiWBmzwQ8oSf0IcWfUdftia4gdOuE3qoZhCp+sGE9KygjHCK9btTjLqG1IkUCaZRR4k9IEijR6d5RBEqMDGkttAKjClq/nLwsYkYbeLcsogcAby+54Kz/2RXUtuM89IapUGdRpSW6M+pAyXvoHRMhH2vjbQqYCfKMmLAUaYc8iSpMIH36RpZAg4OX7Js8fGIw7S7LVzMYQ/V00AAPZCOYCKv3mpzHwN7w7BKDEzWWopIWBgcvifrGpAYzv6JewYx+oMZGVDhocCSKqCeUUnf5hH2kwil0gSdR31CDR1RYOE+bPy34G+dh0E9JqV9RWZFEhVKfvyCuxEvMqE3EtSEQ4/l56P2SoQwQJyILL6QTX4QZwTOkcELeE0qMeEUFEp9QBAqz8heGuL62OCNRQvC31wK/MRXKBLjH42U5wU3hId6/lnkJ/BO2hQrE30JR6Zg7YI9boKd2Bh5hEhbOf4H2WQhtaa7gca9IS1+CJp9EVc6+AQa+ElsNr4CVbFlp33vAL6m8Trwb4DCo1PGeClwLDb1NCzCfVFzq9w7sJxSZt7gAnmgjM+w9g/X+Cv6SgoewyCryfgebEZHrsaFJtjz0Ni3AjIXIDOmV8fLPz8iroymKoiiKoiiKoiiKoiiKwg2ULS0RW5pRhaowflShKowfVagK40cVqsL4UYWqMH5UoSqMH1WoCuNHFarC+FGFqjB+VKEqjB9VqArjRxWqwvj5/Qq7NQyp57YoiqIoijz+AYpeThvypTXpAAAAAElFTkSuQmCC"></a>
+     
+        <a class="pop" onclick="playAgainDisplay()"><img name="Reset" src="data:image/png;base64,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"></a>
+       
+        <div id="instructions">
+    <h2>Instructions</h2> 
+    <div class="infoDisplay">
+        <a onclick="information()"><img name="x" style="height: 25px; width:25px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAk1BMVEX/////AAD/zc3/4+P/b2//cHD/urr/0ND/3d3/x8f/wsL/2tr/Zmb/+fn/WVn/1dX/fHz/8fH/ZGT/YGD/Vlb/xMT/paX/g4P/dXX/8PD/9vb/XV3/Kyv/UlL/ODj/Rkb/trb/sLD/qan/n5//iIj/EBD/HBz/JCT/Ly//Ozv/6Oj/sbH/kJD/f3//DQ3/Ghr/TExKQSBWAAAFIklEQVR4nN3deXPTQAwFcG9wCS1Hy1FouY+Wo5zf/9OBaUMue63VSnpv0b8Z2frNUzKZSbLpukyd3Mo9ylOLY2Vjn1ITxGVKd1WNByk1QVwOc2qIfUpNEJfXc5YTb4D0xOVqzlLiQUpNEJfrOe8UNfYpNUFcbM5ZQtwCEhMX23PKiQcpNUFc7s4pJfa7jaTExf6cMuIIkJI4ApQR91aUlDgKlBBHEyQkTgDniZNAMuIkcI44saJ0xAwwP2cmQSpiFpibcwZIQzzUzpldUSLiTILTc84mSEKcTXBqThGQgCgCjs0pWFEKohC4P6cwQThRDNydswAIJRYAt+cUryiYWATcnLMoQSDxVDtnMRBELAau5ixcURixcEXXcyoShBAVCQ511Z3pGsOJR9o5JW/yGIjKBFM6Er2PxRPVCd4euhsg1gEbINYC6Yn1QHKiBZCaaAMkJt7WznW0eyVSoh2QlKhe0REgJdEyQUqiNZCOaA8kI3oAqYg+QCKiF5CGqAaezl+bgvjWEUhB9EyQguibIAFRDTyU3wNKjABCiTFAIDEKCCN+DQOCiJFACDEWCCBGA8OJ77R3W2iBwUQEMJSIAQYSUcAwIg4YREQCQ4jvocAAIhroTsQDnYlq4NIO6ErkADoSWYBuRB6gE/EpEdCFyJSgC1GdoPb399FEPqAxkes56EBkTNCUyAo0I/ICjYjMQBPiB2qgAZEdWE3kB1YSWwDWEK+4X2QsiNrSHZTUEDEcGE0EAGOJEGAkEQSMI8KAUUQgMIYIBUYQwUB/YtkpbA0SCYC+RAqgJ5EE6EekAXoRiYA+RCqgB5EMaE+kA1oT4Yc1jZUlkRJoSSQF2hFpgVZEYqANkRpoQSQH1hPpgbXEBoB1xCaAXXesBs7+hpekvv3vGV7ogW0Qq4AtECuB/MRqIDvxWT2Qm2gCZCYaAXmJZkBWoiGQk/jdEshINAbyEc2BbEQHIBfxxAPIRHRJkInolCAP0RHIQXQFMhCdgXiiOxBNDABiieoj61shBgFxxDAgihgIxBBDgQhiMDCeqPrrlj91qT7WMpioBaZz9LGTwlKv6HkHP1lTVBUJdk0Qlf8ulNLDmwuwEysT5CdWJ8hONAEyE42AvEQt8McukJVoliAr0RTISLynnGdkRTmJauDzyUtyEc0TZCNqgZfTCXIRHVaUi6hOMLeiTESnFeUhugIZiM5APPGR8u4/pUA0MQCIJYYAkcTHMUAcMQyIIgYCMUQt8KMGiCCqgfeVN4wmBicYT3yhvNcnbYLRRC1QvaLRRBAwjghZ0UjiAxwwhggFRhDBQH8iHOhNJAD6Ep8or/zSEuhJJAH6EWmAXkQioA/xFRPQg0gGtCdqgZ+dfOZEdYJ+QFsiJdCS+Et5HccVtSXSAq2IhC8ytkTiBG2I5MB6Ij2wlqgFvo4D1hG1Rx4FJlhFPNF+Sh+aYAWxH3o1xHCgkthf95YTAUAVsV/1lhIhQAWxX/eWEUHAYmK/2VvyjQsYsJDYb/fKiUBgEbHf7ZUSvyBg6xIT94DSD7WhCQ4lJI4AZURwgkOJiKNACZEAKCJOAOeJFEABcRI4RyQBzhIzwDyRBjhDzAJzX1EgAmaJM8BpIhUwQ5wFThHf+A9dVhNEAXCcSJbgUKNEEXDsk3y6BIcaIQqB+0RK4AhRDNwlkgL3iAXAbSItcIdYBNwkEgO3iIXA9ZcWqIEbxGLgikgO/EdUAK+J9MAbogo4EBsA/iUqgV13YTmIXy3Oco/+BiALdX4ZkntJAAAAAElFTkSuQmCC"></a>
+    </div>
+        <h3>You know the game Wordle! Well, this game is based off of that concept. 
+    <br> You enter a 6 character equation.  If a character is shown up as grey, that means that the character is not used at all in the equation.  If a character is shown up as yellow, that means the character is usd in the equation, but it is not used in the right spot.  If a character is shown up as green, that means that the character is in the right spot.  You have 5 tries to guess the equation.</h3>
+    <br>
+</div>
+    
+    <div id="invalid">
+        <h2>Your Equation Is Invalid</h2> 
+        <div class="infoDisplay"> 
+            <a onclick="information()"><img name="x" style="height: 25px; width:25px;" src="data:image/png;base64,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"></a>
+        </div>
+            <h4>Please enter a valid equation that is mathematically correct! 
+                <br>
+    </div>
+
+    <div id="playAgain">
+        <h2>Thanks For Playing!</h2>
+        <div class="infoDisplay">
+            <a onclick="information()"><img name="x" style="height: 25px; width:25px;" src="data:image/png;base64,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"></a>
+        </div>
+        <br>
+        <h3 id="winLose"></h3> 
+        <br>
+        <div class="playMore">
+        <a onclick="playMore()"><h4>PLAY AGAIN / RESET</h4></a>    
+        </div>
+        <br>
+    </div>
+
+    <div id="attemptRows" class="inputRow">
+        <div id="row1">
+            <div id="box1-1"><p id="text1-1" class="input"></p></div>
+            <div id="box1-2"><p id="text1-2" class="input"></p></div>
+            <div id="box1-3"><p id="text1-3" class="input"></p></div>
+            <div id="box1-4"><p id="text1-4" class="input"></p></div>
+            <div id="box1-5"><p id="text1-5" class="input"></p></div>
+            <div id="box1-6"><p id="text1-6" class="input"></p></div>
+        </div>
+        <div id="row2">
+            <div id="box2-1"><p id="text2-1" class="input"></p></div>
+            <div id="box2-2"><p id="text2-2" class="input"></p></div>
+            <div id="box2-3"><p id="text2-3" class="input"></p></div>
+            <div id="box2-4"><p id="text2-4" class="input"></p></div>
+            <div id="box2-5"><p id="text2-5" class="input"></p></div>
+            <div id="box2-6"><p id="text2-6" class="input"></p></div>
+        </div>
+        <div id="row3">
+            <div id="box3-1"><p id="text3-1" class="input"></p></div>
+            <div id="box3-2"><p id="text3-2" class="input"></p></div>
+            <div id="box3-3"><p id="text3-3" class="input"></p></div>
+            <div id="box3-4"><p id="text3-4" class="input"></p></div>
+            <div id="box3-5"><p id="text3-5" class="input"></p></div>
+            <div id="box3-6"><p id="text3-6" class="input"></p></div>
+        </div>
+        <div id="row4">
+            <div id="box4-1"><p id="text4-1" class="input"></p></div>
+            <div id="box4-2"><p id="text4-2" class="input"></p></div>
+            <div id="box4-3"><p id="text4-3" class="input"></p></div>
+            <div id="box4-4"><p id="text4-4" class="input"></p></div>
+            <div id="box4-5"><p id="text4-5" class="input"></p></div>
+            <div id="box4-6"><p id="text4-6" class="input"></p></div>
+        </div>
+        <div id="row5">
+            <div id="box5-1"><p id="text5-1" class="input"></p></div>
+            <div id="box5-2"><p id="text5-2" class="input"></p></div>
+            <div id="box5-3"><p id="text5-3" class="input"></p></div>
+            <div id="box5-4"><p id="text5-4" class="input"></p></div>
+            <div id="box5-5"><p id="text5-5" class="input"></p></div>
+            <div id="box5-6"><p id="text5-6" class="input"></p></div>
+        </div>
+    </div>
+    <div id="keyboard">
+        <div id="keyboard_numbers">
+            <button onclick="charTyped('0')" class="keys" id="key0">0</button>
+            <button onclick="charTyped('1')" class="keys" id="key1">1</button>
+            <button onclick="charTyped('2')" class="keys" id="key2">2</button>
+            <button onclick="charTyped('3')" class="keys" id="key3">3</button>
+            <button onclick="charTyped('4')" class="keys" id="key4">4</button>
+            <br>
+            <button onclick="charTyped('5')" class="keys" id="key5">5</button>
+            <button onclick="charTyped('6')" class="keys" id="key6">6</button>
+            <button onclick="charTyped('7')" class="keys" id="key7">7</button>
+            <button onclick="charTyped('8')" class="keys" id="key8">8</button>
+            <button onclick="charTyped('9')" class="keys" id="key9">9</button>
+        </div>
+        <div id="keyboard_operators">
+            <button onclick="charTyped('+')" class="keys" id="key+">+</button>
+            <button onclick="charTyped('-')" class="keys" id="key-">-</button>
+            <button onclick="charTyped('*')" class="keys" id="key*">*</button>
+            <button onclick="charTyped('/')" class="keys" id="key/">/</button>
+            <button onclick="charTyped('=')" class="keys" id="key=">=</button>
+            <br>
+            <button onclick="checkEquation()" id="enterButton" class="enders">Enter</button>
+            <button onclick="charDelete()" id="deleteButton" class="enders">Delete</button>
+        </div>
+    </div>
+</body>
+</html>
